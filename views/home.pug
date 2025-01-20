@@ -1,0 +1,20 @@
+//- This line extends the main layout (layout.pug)
+//- It means this template will inherit the structure defined in layout.pug
+//- The content defined here will be inserted into the 'block content' of the layout
+extends layout
+
+block content
+  //- Demonstrating an unordered list (ul) for displaying books
+  h2 Book List
+  ul.book-list
+    each book in books
+      //- Each list item (li) represents a book
+      li
+        h3
+          //- Using anchor tags (a) for linking to individual book pages
+          a(href=`/book/${book.id}`)= book.title
+        //- Paragraph tags (p) for book details
+        p by #{book.author}
+        p Year: #{book.year}
+        p Genre: #{book.genre}
+

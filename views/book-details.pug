@@ -1,0 +1,22 @@
+//- This line extends the main layout (layout.pug)
+//- It means this template will inherit the structure defined in layout.pug
+//- The content defined here will be inserted into the 'block content' of the layout
+extends layout
+
+block content
+  //- Demonstrating a detailed view with headings and paragraphs
+  h2= book.title
+  .book-details
+    //- Using paragraphs (p) with strong tags for emphasis
+    p 
+      strong Author: 
+      | #{book.author}
+    p 
+      strong Year: 
+      | #{book.year}
+    p 
+      strong Genre: 
+      | #{book.genre}
+  //- Anchor tag (a) for navigation back to the book list
+  a(href="/") Back to Book List
+

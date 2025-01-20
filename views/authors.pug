@@ -1,0 +1,23 @@
+//- This line extends the main layout (layout.pug)
+//- It means this template will inherit the structure defined in layout.pug
+//- The content defined here will be inserted into the 'block content' of the layout
+extends layout
+
+block content
+  h2 Authors
+  //- Demonstrating a table for displaying structured data
+  table.authors-table
+    //- Table header (thead) with column names
+    thead
+      tr
+        th Name
+        th Birth Year
+        th Nationality
+    //- Table body (tbody) with rows of data
+    tbody
+      each author in authors
+        tr
+          td= author.name
+          td= author.birthYear
+          td= author.nationality
+

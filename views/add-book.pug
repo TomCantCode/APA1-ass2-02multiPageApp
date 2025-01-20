@@ -1,0 +1,39 @@
+//- This line extends the main layout (layout.pug)
+//- It means this template will inherit the structure defined in layout.pug
+//- The content defined here will be inserted into the 'block content' of the layout
+extends layout
+
+block content
+  h2 Add a New Book
+  //- Demonstrating a form with various input types
+  form(action="/add-book" method="POST")
+    //- Text input
+    .form-group
+      label(for="title") Title:
+      input(type="text" id="title" name="title" required)
+    
+    //- Text input
+    .form-group
+      label(for="author") Author:
+      input(type="text" id="author" name="author" required)
+    
+    //- Number input
+    .form-group
+      label(for="year") Year:
+      input(type="number" id="year" name="year" required min="1000" max="2023")
+    
+    //- Select dropdown
+    .form-group
+      label(for="genre") Genre:
+      select(id="genre" name="genre" required)
+        option(value="") Select a genre
+        option(value="Fiction") Fiction
+        option(value="Non-Fiction") Non-Fiction
+        option(value="Science Fiction") Science Fiction
+        option(value="Mystery") Mystery
+        option(value="Romance") Romance
+        option(value="Thriller") Thriller
+    
+    //- Submit button
+    button(type="submit") Add Book
+

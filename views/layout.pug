@@ -1,0 +1,32 @@
+//- Base layout template for all pages
+doctype html
+html(lang="en")
+  head
+    //- Meta tags for character encoding and responsive design
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    //- Dynamic title tag
+    title Book Library | #{title}
+    //- Link to external CSS file
+    link(rel="stylesheet", href="/styles.css")
+  body
+    //- Navigation bar
+    nav
+      //- Unordered list for navigation menu items
+      ul
+        li
+          a(href="/") Home
+        li
+          a(href="/add-book") Add Book
+        li
+          a(href="/authors") Authors
+    //- Main content container
+    .container
+      //- Dynamic h1 heading
+      h1= title
+      //- Content block to be filled by child templates
+      block content
+    //- Footer section
+    footer
+      p &copy; 1999 Book Library. All rights reserved.
+
