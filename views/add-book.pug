@@ -20,7 +20,8 @@ block content
     //- Number input
     .form-group
       label(for="year") Year:
-      input(type="number" id="year" name="year" required min="1000" max="2023")
+      - const currentYear = new Date().getFullYear();
+      input(type="number" id="year" name="year" required min="1000" max=currentYear)
     
     //- Select dropdown
     .form-group
