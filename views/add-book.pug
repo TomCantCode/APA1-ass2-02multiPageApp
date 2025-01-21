@@ -38,3 +38,18 @@ block content
     //- Submit button
     button(type="submit") Add Book
 
+  h2 Delete a Book
+  //- demonstrate a form
+  form(action="/delete-book" method="POST")
+    //- text input
+    .form-group
+      label(for="delete-title") Title:
+      input(type="text" id="delete-title" name="delete-title" required)
+    button.delete-book(type="submit") Delete Book
+
+
+
+
+    
+
+

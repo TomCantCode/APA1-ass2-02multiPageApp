@@ -75,6 +75,18 @@ app.get('/authors', (req, res) => {
   res.render('authors', { authors: authors });
 });
 
+app.post('/delete-book', (req, res) => {  
+  const bookTitle = req.body['delete-title'];  
+  const bookIndex = books.findIndex(b => b.title.toLowerCase() === bookTitle.toLowerCase());  
+  
+  if (bookIndex === -1) {
+    return res.status(404).send('<script>alert("Could not find book."); window.location.href = "/add-book";</script>');
+  }
+  
+  books.splice(bookIndex, 1);  
+  res.redirect('/');  
+});  
+
 // Start the server
 app.listen(port, () => {
   console.log(`Book Library app listening at http://localhost:${port}`);
