@@ -12,9 +12,10 @@ block content
       li
         h3
           //- Using anchor tags (a) for linking to individual book pages
-          a(href=`/book/${book.id}`)= book.title
+          a.home-book-title(href=`/book/${book.id}`)= book.title
         //- Paragraph tags (p) for book details
-        p by #{book.author}
-        p Year: #{book.year}
-        p Genre: #{book.genre}
+        div.home-book-details
+          p by #{book.author}.
+          p Year: #{book.year}.
+          p Genre: #{book.genre}.
 
