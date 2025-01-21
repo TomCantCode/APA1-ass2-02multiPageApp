@@ -308,7 +308,10 @@ footer {
   width: 90%;
 }
 
+div.home-book-details {
+  margin-left: 20px;
+}
 
-
-
-
+a.home-book-title {
+  padding: 15px;
+}
