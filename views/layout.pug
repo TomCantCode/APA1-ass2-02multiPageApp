@@ -28,5 +28,8 @@ html(lang="en")
       block content
     //- Footer section
     footer
-      p &copy; 1999 Book Library. All rights reserved.
+      p &copy;
+      script.
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer p').innerHTML = `&copy; ${currentYear} Book Library. All rights reserved.`;
 
